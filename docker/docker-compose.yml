@@ -1,0 +1,45 @@
+version: "3.8"
+
+x-common-app-items: &common-app-items
+  build:
+    context: ..
+    dockerfile: docker/Dockerfile
+  depends_on:
+    - "database"
+  volumes:
+    - type: bind
+      source: ..
+      target: /home/app/core
+  env_file: ../.env # one config to rule them all -- see .env.example for required variables
+  stdin_open: true # needed to attach to container to debug in developent environment
+  tty: true # needed to attach to container to debug in developent environment
+
+services:
+  redis:
+    image: redis:5.0.7
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/var/lib/redis/data
+
+  database:
+    image: postgres:13
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432
+
+  website:
+    <<: *common-app-items
+    ports:
+      - "4000:4000"
+
+  worker:
+    <<: *common-app-items
+    command: "docker/worker-startup.sh"
+
+volumes:
+  postgres-data:
+  redis-data:

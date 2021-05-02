@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kwanifi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <body class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+            <div class="card mt-5">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+  </body>
+</html>
