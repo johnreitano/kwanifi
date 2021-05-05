@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html class="h-100">
+
+<head>
     <title>Kwanifi</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <body class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-            <div class="card mt-5">
-              <%= yield %>
+<body class="h-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center h-100">
+            <div class="col-12 col-lg-10">
+                <%= yield %>
+
             </div>
-          </div>
         </div>
-      </div>
-    </body>
+    </div>
+</body>
 
-  </body>
 </html>
