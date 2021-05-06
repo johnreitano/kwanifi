@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'pages/home'
-  get 'pages/landing' 
+  get '/landing', to: 'pages#landing'
+  get '/easy-steps', to: 'pages#easy_steps'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

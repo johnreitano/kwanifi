@@ -1,8 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: 300;
   color: #5f5f5f;
-  background-color: #67a9e5;
+
+  // background-color: hsl(209, 71%, 65%);
 }
 h1 {
   // font-size: 500%;
@@ -11,11 +14,33 @@ h6 {
   // font-size: 150%;
 }
 
+.custom-card h4 {
+  color: #e64964;
+}
+
+.blue {
+  color: #14c0ee;
+}
+
+.logo {
+  color: #14c0ee;
+  letter-spacing: 0.1rem;
+}
+
+.nav-menu {
+  // box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 0px;
+  box-shadow: rgba(172, 174, 175, 0.3) 0px 2px 0px;
+
+  // color: #1453ee;
+  // color: #e43553;
+}
+
+.nav-menu h1 {
+  margin: 0;
+}
 .display {
   font-size: 4.5rem;
-  font-weight: 300;
   line-height: 1.2;
-  letter-spacing: 0.1rem;
 }
 
 .card-display {
@@ -24,9 +49,39 @@ h6 {
   border: none;
 }
 
+.fa-address-card,
+.fa-dollar-sign {
+  font-size: 2rem;
+  // border: 1px solid red;
+  width: 40px;
+  text-align: right;
+  -webkit-text-stroke: 1px #fff;
+}
+
+.btn-green {
+  background-color: #00b67e;
+}
+
+.green {
+  color: rgb(0, 155, 154);
+}
+
+.yellow {
+  // color: #feb101;
+  color: #fec033;
+}
+
+.btn-pink {
+  background-color: #e64964;
+}
+
+.pink {
+  color: #e64964;
+}
+
 .card {
-  background-color: #67a9e5;
-  color: white;
+  // background-color: #67a9e5;
+  // color: white;
 }
 
 .field_with_errors {
@@ -34,23 +89,43 @@ h6 {
   width: 100%;
 }
 
-@include media-breakpoint-up(sm) {
-  // .display {
-  //   font-size: 2.5rem;
-  //   font-weight: 300;
-  //   line-height: 1.2;
-  //   margin-top: 5rem;
-  // }
+@media (min-width: 576px) {
 }
 
-@include media-breakpoint-up(md) {
+@media (min-width: 768px) {
   .display {
     font-size: 5.5rem;
   }
+
+  body {
+    background-color: #f8f9fa;
+  }
+  .custom-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-top: 3rem;
+    padding: 0 3rem;
+  }
 }
 
-@include media-breakpoint-up(lg) {
+@media (min-width: 992px) {
   .display {
     font-size: 6rem;
+  }
+
+  .custom-card {
+    padding: 0 6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .custom-card {
+    padding: 0 8rem;
   }
 }
